@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>팀 · KBO HUB</title>
+<script>(function(){var t=null;try{t=localStorage.getItem("kbo-theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})()</script>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +16,7 @@
 <script>
 init("teams.html",()=>{
 
-$("app").innerHTML=pageHead("10개 구단","팀을 선택하면 상세 페이지로 이동합니다")+`<main><section><div class="tg">${D.standings.map((r,i)=>`<a href="team.html?t=${encodeURIComponent(r[0])}" style="text-decoration:none"><button ${sty(r[0])}>${bd(r[0])}${r[0]}<br><small style="font-weight:400;color:#5b6678">${i+1}위 · ${r[2]}승 ${r[3]}패 ${r[4]}무</small></button></a>`).join("")}</div></section></main>`;
+$("app").innerHTML=pageHead("10개 구단","팀을 선택하면 상세 페이지로 이동합니다")+`<main><section><div class="tg">${D.standings.map((r,i)=>`<a href="team.html?t=${encodeURIComponent(r[0])}" style="text-decoration:none"><button ${sty(r[0])}>${bd(r[0])}${r[0]}<br><small style="font-weight:400;color:var(--mute)">${i+1}위 · ${r[2]}승 ${r[3]}패 ${r[4]}무</small></button></a>`).join("")}</div></section></main>`;
 
 });
 </script>

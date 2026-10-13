@@ -2,6 +2,8 @@
 const TC={"KT":["#1a1a1a","#EB1C24"],"삼성":["#074CA1","#9FB5D6"],"KIA":["#EA0029","#1a1a1a"],"LG":["#C30452","#1a1a1a"],"두산":["#131230","#E60012"],"SSG":["#CE0E2D","#F2B705"],"롯데":["#041E42","#D00F31"],"NC":["#315288","#AF917B"],"한화":["#E8590C","#1a1a1a"],"키움":["#570514","#C69B5B"]};
 const NAV=[["index.html","홈"],["schedule.html","일정"],["results.html","결과"],["standings.html","팀 순위"],["teams.html","팀"],["leaders.html","선수 순위"],["players.html","선수"]];
 const $=id=>document.getElementById(id);
+function themeNow(){return document.documentElement.dataset.theme==="dark"?"dark":"light"}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("kbo-theme",t)}catch(e){}const b=$("themeBtn");if(b)b.textContent=t==="dark"?"☀️ 라이트":"🌙 다크"}
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const q=k=>new URLSearchParams(location.search).get(k);
 let D,TEAMS;
@@ -17,7 +19,8 @@ const ST_H=["순위","팀","경기","승","패","무","승률","게임차","최�
 /* 선수 목록: 기록 TOP5에 오른 선수 */
 function players(){const m={};Object.entries(D.leaders).forEach(([k,o])=>o.v.forEach((r,i)=>{const key=r[0]+"|"+r[1];(m[key]=m[key]||{n:r[0],t:r[1],g:o.g,recs:[]}).recs.push({k,u:o.u,rank:i+1,val:r[2]})}));return Object.values(m).sort((a,b)=>b.recs.length-a.recs.length)}
 function head(active){
-  $("hd").innerHTML=`<nav><div class="logo"><a href="index.html">KBO<span>●</span>HUB</a></div><ul>${NAV.map(([h,n])=>`<li><a href="${h}" class="${h===active?'on':''}">${n}</a></li>`).join("")}</ul></nav>`;
+  $("hd").innerHTML=`<nav><div class="logo"><a href="index.html"><img src="logo-sm.png" alt="한국 프로야구 한눈에" class="logo-img"><span class="logo-tx">KBO<span>●</span>HUB</span></a></div><ul>${NAV.map(([h,n])=>`<li><a href="${h}" class="${h===active?'on':''}">${n}</a></li>`).join("")}</ul><button class="theme" id="themeBtn" type="button"></button></nav>`;
+  $("themeBtn").onclick=()=>setTheme(themeNow()==="dark"?"light":"dark");setTheme(themeNow());
   $("ft").innerHTML=`마지막 갱신: ${esc(D.updated||'-')}<br>KBO HUB · 팬이 만든 비공식 정보 사이트 · 기록 출처 <a href="https://www.koreabaseball.com" target="_blank" rel="noopener">KBO</a>`;
 }
 function pageHead(title,sub,crumb){return `<div class="pagehead"><div>${crumb?`<div class="crumb">${crumb}</div>`:""}<h1>${title}</h1>${sub?`<p>${sub}</p>`:""}</div></div>`}
