@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>경기 일정 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("schedule.html",()=>{
+
+$("app").innerHTML=pageHead("경기 일정","예정된 경기 (정규시즌·포스트시즌)")+`<main><section><select class="sel" id="ft1"><option value="">전체 팀</option>${TEAMS.map(t=>`<option>${t}</option>`).join("")}</select><select class="sel" id="fs"><option value="">전체 구분</option><option>정규시즌</option><option>포스트시즌</option></select><div id="list"></div></section></main>`;
+function draw(){const t=$("ft1").value,s=$("fs").value;const r=D.schedule.filter(g=>(!t||g.away===t||g.home===t)&&(!s||g.stage===s));$("list").innerHTML=r.length?r.map(schRow).join(""):'<p class="empty">조건에 맞는 예정 경기가 없습니다.</p>'}
+$("ft1").onchange=$("fs").onchange=draw;const pt=q("t");if(pt)$("ft1").value=pt;draw();
+
+});
+</script>
+</body>
+</html>

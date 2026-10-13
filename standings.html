@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>팀 순위 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("standings.html",()=>{
+
+const hh=D.h2h;
+$("app").innerHTML=pageHead("팀 순위","정규시즌 순위와 팀간 승패표")+`<main><section>${table(ST_H,D.standings.map(stRow).join(""),[1])}</section>
+<section><h2>팀간 승패표 (승-패-무)</h2>${table(["팀",...TEAMS],TEAMS.map(a=>`<tr ${sty(a)}><td class="l" style="border-left:4px solid var(--c1)"><b>${tl(a)}</b></td>${hh[a].map((v,j)=>`<td>${a===TEAMS[j]?'■':v}</td>`).join("")}</tr>`).join(""))}</section></main>`;
+
+});
+</script>
+</body>
+</html>

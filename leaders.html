@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>선수 순위 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("leaders.html",()=>{
+
+const keys=Object.keys(D.leaders);
+$("app").innerHTML=pageHead("선수 순위","KBO 공식 기록 TOP5")+`<main><section><div class="tabs" id="tabs"></div><div id="tb"></div></section></main>`;
+function draw(k){const o=D.leaders[k];$("tb").innerHTML=table(["순위","선수","팀",o.u],o.v.map((r,i)=>`<tr><td>${i+1}</td><td class="l"><b>${pl(r[0],r[1])}</b></td><td>${tl(r[1])}</td><td>${r[2]}</td></tr>`).join(""),[1]);[...$("tabs").children].forEach(b=>b.classList.toggle("on",b.dataset.k===k));history.replaceState(null,"","?k="+encodeURIComponent(k))}
+$("tabs").innerHTML=keys.map(k=>`<button data-k="${k}">${D.leaders[k].g==="투수"?"⚾ ":"🏏 "}${k}</button>`).join("");
+[...$("tabs").children].forEach(b=>b.onclick=()=>draw(b.dataset.k));
+draw(keys.includes(q("k"))?q("k"):keys[0]);
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>선수 상세 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("players.html",()=>{
+
+const n=q("n"),t=q("t"),p=players().find(x=>x.n===n&&x.t===t);
+if(!p){$("app").innerHTML=pageHead("선수를 찾을 수 없습니다","")+'<main><section><a class="more" href="players.html">← 선수 목록</a></section></main>';return}
+document.title=p.n+" · KBO HUB";
+$("app").innerHTML=`<main style="padding-top:24px"><a class="more" href="players.html">← 선수 목록</a>
+<div class="th" ${sty(p.t)} style="margin-top:12px">${bd(p.t)}<div><h1>${esc(p.n)}</h1><p>${p.t} · ${p.g}</p><p style="margin-top:8px">TOP5 진입 ${p.recs.length}개 부문</p></div></div>
+<h3 class="sub">시즌 기록 (KBO 공식 TOP5 기준)</h3><div class="rec">${p.recs.map(x=>`<div><small>${x.k} (${x.u})</small><b>${x.val}</b>${x.rank}위</div>`).join("")}</div>
+<h3 class="sub">부문별 순위 보기</h3>${p.recs.map(x=>`<h4 style="margin:14px 0 6px">${x.k}</h4><div class="card">${D.leaders[x.k].v.map((r,i)=>`<div class="rank" style="${r[0]===p.n&&r[1]===p.t?'background:#fff4d6;margin:0 -8px;padding:8px':''}"><b class="n">${i+1}</b>${pl(r[0],r[1])} ${tl(r[1])}<span class="v">${r[2]}</span></div>`).join("")}</div>`).join("")}
+<p class="empty" style="margin-top:16px">※ 이 사이트는 TOP5 기록만 수집합니다. 전체 기록은 <a href="https://www.koreabaseball.com/Player/Search.aspx" target="_blank" rel="noopener">KBO 공식 사이트</a>에서 확인하세요.</p>
+</main><div style="height:40px"></div>`;
+
+});
+</script>
+</body>
+</html>

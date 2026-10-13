@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>선수 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("players.html",()=>{
+
+const P=players();
+$("app").innerHTML=pageHead("선수","기록 TOP5에 오른 선수 목록 — 이름을 누르면 상세 페이지")+`<main><section><input class="search" id="q" placeholder="선수 이름·팀 검색"><div id="tb"></div></section></main>`;
+function draw(){const s=$("q").value.trim();const r=P.filter(p=>!s||(p.n+p.t+p.g).includes(s));$("tb").innerHTML=table(["이름","팀","구분","주요 기록"],r.map(p=>`<tr><td class="l"><b>${pl(p.n,p.t)}</b></td><td>${tl(p.t)}</td><td>${p.g}</td><td class="l">${p.recs.map(x=>`${x.k} ${x.rank}위`).join(" · ")}</td></tr>`).join("")||'<tr><td colspan="4">검색 결과가 없습니다.</td></tr>',[0,3])}
+$("q").oninput=draw;draw();
+
+});
+</script>
+</body>
+</html>

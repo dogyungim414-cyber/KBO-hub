@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>경기 결과 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("results.html",()=>{
+
+$("app").innerHTML=pageHead("경기 결과","최근 경기 스코어")+`<main><section><select class="sel" id="ft1"><option value="">전체 팀</option>${TEAMS.map(t=>`<option>${t}</option>`).join("")}</select><div id="list"></div></section></main>`;
+function draw(){const t=$("ft1").value;const r=D.results.filter(g=>!t||g.away===t||g.home===t);$("list").innerHTML=r.length?r.map(gameRow).join(""):'<p class="empty">결과가 없습니다.</p>'}
+$("ft1").onchange=draw;const pt=q("t");if(pt)$("ft1").value=pt;draw();
+
+});
+</script>
+</body>
+</html>

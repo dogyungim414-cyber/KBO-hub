@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>팀 상세 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("teams.html",()=>{
+
+const t=q("t"),i=TEAMS.indexOf(t);
+if(i<0){$("app").innerHTML=pageHead("팀을 찾을 수 없습니다","")+'<main><section><a class="more" href="teams.html">← 팀 목록</a></section></main>';return}
+document.title=t+" · KBO HUB";
+const r=D.standings[i],rs=D.results.filter(x=>x.away===t||x.home===t),sc=D.schedule.filter(x=>x.away===t||x.home===t);
+const res=rs.map(x=>{const my=x.away===t?x.as:x.hs,op=x.away===t?x.hs:x.as;return my>op?"W":my<op?"L":"D"}),wl={W:"승",L:"패",D:"무"};
+const ps=players().filter(p=>p.t===t);
+$("app").innerHTML=`<main style="padding-top:24px"><a class="more" href="teams.html">← 팀 목록</a>
+<div class="th" ${sty(t)} style="margin-top:12px">${bd(t)}<div><h1>${t}</h1><p>정규시즌 ${i+1}위</p>
+<div class="stats"><div><b>${r[1]}</b>경기</div><div><b>${r[2]}</b>승</div><div><b>${r[3]}</b>패</div><div><b>${r[4]}</b>무</div><div><b>${r[5]}</b>승률</div><div><b>${r[6]}</b>게임차</div></div>
+<p style="margin-top:12px">최근 10경기 ${r[7]} · 연속 ${r[8]} · 홈 ${r[9]} · 방문 ${r[10]}</p></div></div>
+<h3 class="sub">최근 경기 흐름 (최신순)</h3><div class="form" ${sty(t)}>${res.slice(0,15).map(x=>`<span class="${x}">${wl[x]}</span>`).join("")||'<span class="empty">없음</span>'}</div>
+<h3 class="sub">경기 결과</h3>${rs.length?rs.map(gameRow).join(""):'<p class="empty">최근 결과가 없습니다.</p>'}
+<h3 class="sub">앞으로의 일정</h3>${sc.length?sc.map(schRow).join(""):'<p class="empty">예정된 경기가 없습니다.</p>'}
+<h3 class="sub">주요 선수 (기록 TOP5)</h3>${ps.length?table(["이름","구분","기록"],ps.map(p=>`<tr><td class="l"><b>${pl(p.n,p.t)}</b></td><td>${p.g}</td><td class="l">${p.recs.map(x=>`${x.k} ${x.rank}위 (${x.val})`).join(" · ")}</td></tr>`).join(""),[0,2]):'<p class="empty">TOP5에 오른 선수가 없습니다.</p>'}
+<h3 class="sub">상대 전적 (승-패-무)</h3>${table(["상대","전적"],TEAMS.map((o,j)=>o===t?"":`<tr><td class="l"><b>${tl(o)}</b></td><td>${D.h2h[t][j]}</td></tr>`).join(""))}
+</main><div style="height:40px"></div>`;
+
+});
+</script>
+</body>
+</html>

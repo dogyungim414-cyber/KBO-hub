@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>한국 프로야구 한눈에 · KBO HUB</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("index.html",()=>{
+
+const up=D.schedule.slice(0,4),rc=D.results.slice(0,4);
+const top=Object.entries(D.leaders).slice(0,0);
+const feat=["타율","홈런","타점","평균자책점","다승","세이브"].filter(k=>D.leaders[k]);
+$("app").innerHTML=`<div class="hero"><h1>한국 프로야구, 한눈에</h1><p>KBO 리그의 일정·결과·팀 순위·선수 기록을 한 곳에서 확인하세요.</p><a class="btn" href="standings.html">팀 순위 보기</a></div>
+<main><section><h2>빠른 메뉴</h2><div class="grid linkcards">
+<a href="schedule.html"><div class="card"><h3>📅 일정</h3><p>다음 경기와 포스트시즌 일정</p></div></a>
+<a href="results.html"><div class="card"><h3>✅ 결과</h3><p>최근 경기 스코어, 팀별 필터</p></div></a>
+<a href="standings.html"><div class="card"><h3>🏆 팀 순위</h3><p>승률·게임차·최근 10경기·상대 전적</p></div></a>
+<a href="teams.html"><div class="card"><h3>⚾ 팀</h3><p>10개 구단 상세 페이지</p></div></a>
+<a href="leaders.html"><div class="card"><h3>📊 선수 순위</h3><p>타자 9개·투수 6개 부문</p></div></a>
+<a href="players.html"><div class="card"><h3>👤 선수</h3><p>선수 검색, 선수 상세 페이지</p></div></a>
+</div></section>
+<section><h2>팀 순위 TOP5</h2>${table(ST_H,D.standings.slice(0,5).map(stRow).join(""),[1])}<a class="more" href="standings.html">전체 순위 보기 →</a></section>
+<section class="two"><div><h2>다음 경기</h2>${up.length?up.map(schRow).join(""):'<p class="empty">예정된 경기가 없습니다.</p>'}<a class="more" href="schedule.html">전체 일정 →</a></div>
+<div><h2>최근 결과</h2>${rc.map(gameRow).join("")}<a class="more" href="results.html">전체 결과 →</a></div></section>
+<section><h2>부문별 1위</h2><div class="rec">${feat.map(k=>{const r=D.leaders[k].v[0];return `<div><small>${k}</small><b>${r[2]}</b>${pl(r[0],r[1])} · ${tl(r[1])}</div>`}).join("")}</div><a class="more" href="leaders.html">선수 순위 전체 →</a></section></main>`;
+
+});
+</script>
+</body>
+</html>
