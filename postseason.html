@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>포스트시즌 · KBO HUB</title>
+<script>(function(){var t=null;try{t=localStorage.getItem("kbo-theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t})()</script>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hd"></header>
+<div id="app"></div>
+<footer id="ft"></footer>
+<script src="app.js"></script>
+<script>
+init("postseason.html",()=>{
+
+const seed=D.standings.slice(0,5).map(r=>r[0]);
+const isT=t=>TEAMS.includes(t);
+const norm=d=>String(d).slice(0,5);
+function stageOf(g){const t=[g.away,g.home];if(t.includes(seed[0]))return 3;if(t.includes(seed[1]))return 2;if(t.includes(seed[2]))return 1;return 0}
+const doneAll=(D.results||[]).filter(g=>g.post).slice().reverse();
+const todoAll=(D.schedule||[]).filter(g=>g.stage==="포스트시즌");
+const ST=[{k:"와일드카드 결정전",len:"4위 1승 또는 1무 시 진출 · 5위는 2연승 필요",need:0},
+{k:"준플레이오프",len:"5전 3선승제",need:3},{k:"플레이오프",len:"5전 3선승제",need:3},{k:"한국시리즈",len:"7전 4선승제",need:4}];
+function calc(i,hi,lo){
+ let games=[...doneAll.filter(g=>stageOf(g)===i).map(g=>({...g,fin:true})),...todoAll.filter(g=>stageOf(g)===i).map(g=>({...g,fin:false}))]
+  .sort((a,b)=>norm(a.date).localeCompare(norm(b.date))||(a.fin===b.fin?0:a.fin?-1:1));
+ const fin=games.filter(g=>g.fin);
+ if(fin.length&&isT(hi)){const g=fin[0];lo=g.away===hi?g.home:g.away}
+ const w={hi:0,lo:0,d:0};
+ fin.forEach(g=>{if(g.as===g.hs)w.d++;else{const win=g.as>g.hs?g.away:g.home;if(win===hi)w.hi++;else if(win===lo)w.lo++}});
+ let winner=null;
+ if(i===0){
+  if(fin.length){const g=fin[0],gw=g.as===g.hs?null:(g.as>g.hs?g.away:g.home);
+   if(gw!==lo)winner=hi;
+   else if(fin.length>=2){const g2=fin[1],g2w=g2.as===g2.hs?null:(g2.as>g2.hs?g2.away:g2.home);winner=g2w===lo?lo:hi}}
+ }else{const n=ST[i].need;if(w.hi>=n)winner=hi;else if(w.lo>=n)winner=lo}
+ return {i,hi,lo,games,w,winner,fin:fin.length};
+}
+const R=[];
+R[0]=calc(0,seed[3],seed[4]);
+R[1]=calc(1,seed[2],R[0].winner||"WC 승리팀");
+R[2]=calc(2,seed[1],R[1].winner||"준PO 승리팀");
+R[3]=calc(3,seed[0],R[2].winner||"PO 승리팀");
+function side(t,w,r){const idx=seed.indexOf(t),win=r.winner===t,out=r.winner&&!win;
+ return `<div class="side ${win?'adv':''} ${out?'out':''}">${isT(t)?tl(t):`<span class="tbd">${esc(t)}</span>`}<small>${idx>=0?(idx+1)+'위':''}</small><b>${w}</b></div>`}
+function gline(g){return g.fin?`<div class="gl"><b>${esc(g.date)}</b> · ${esc(g.away)} ${g.as} : ${g.hs} ${esc(g.home)}</div>`
+ :`<div class="gl">${esc(g.date)} ${esc(g.time||'')} · ${esc(g.away)} vs ${esc(g.home)} · ${esc(g.place)}${g.note?' · '+esc(g.note):''}</div>`}
+function card(r){const s=ST[r.i];
+ let pill;
+ if(r.winner)pill=`<span class="pill end">종료 · ${esc(r.winner)} 진출</span>`;
+ else if(r.fin)pill=`<span class="pill live">진행 중</span>`;
+ else pill=`<span class="pill">${r.games.length?'예정':'일정 미정'}</span>`;
+ return `<div class="round"><h3>${s.k}</h3><div class="len">${s.len}</div>
+ ${side(r.hi,r.w.hi,r)}${side(r.lo,r.w.lo,r)}${r.w.d?`<div class="len" style="margin-top:6px">무승부 ${r.w.d}</div>`:''}
+ ${pill}${r.games.map(gline).join("")||'<div class="gl">대진 확정 후 일정이 표시됩니다.</div>'}</div>`}
+const champ=R[3].winner;
+const nxt=todoAll.slice(0,3);
+$("app").innerHTML=pageHead("포스트시즌","와일드카드 결정전 → 준플레이오프 → 플레이오프 → 한국시리즈")+`<main><section>
+${champ?`<div class="champ">🏆 ${esc(champ)} 한국시리즈 우승!</div>`:''}
+<div class="bracket">${R.map(card).join("")}</div></section>
+<section><h2>다음 경기</h2>${nxt.length?nxt.map(schRow).join(""):'<p class="empty">예정된 포스트시즌 경기가 없습니다.</p>'}<a class="more" href="schedule.html">전체 일정 →</a></section>
+<section><h2>진행 방식</h2><div class="card rule">정규시즌 1위는 한국시리즈에 직행하고, 2위는 플레이오프, 3위는 준플레이오프에 직행합니다. 4위와 5위가 와일드카드 결정전을 치르고 승자가 3위와 준플레이오프에서 만납니다. 4위는 1승 또는 1무만 해도 진출하고, 5위는 2연승해야 진출합니다.<br>※ 진출·승리 판정은 경기 결과를 바탕으로 이 사이트가 계산한 것이라, 공식 결과와 다르면 <a href="https://www.koreabaseball.com" target="_blank" rel="noopener">KBO 공식 사이트</a>를 따르세요.</div></section></main>`;
+});
+</script>
+</body>
+</html>

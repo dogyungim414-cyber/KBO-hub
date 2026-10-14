@@ -179,7 +179,8 @@
    "as": 2,
    "home": "KIA",
    "hs": 4,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "10/12",
@@ -187,7 +188,8 @@
    "as": 4,
    "home": "삼성",
    "hs": 2,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/12",
@@ -195,7 +197,8 @@
    "as": 7,
    "home": "두산",
    "hs": 4,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/11",
@@ -203,7 +206,8 @@
    "as": 4,
    "home": "KIA",
    "hs": 1,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "10/11",
@@ -211,7 +215,8 @@
    "as": 12,
    "home": "삼성",
    "hs": 3,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/10",
@@ -219,7 +224,8 @@
    "as": 9,
    "home": "한화",
    "hs": 8,
-   "place": "대전"
+   "place": "대전",
+   "post": false
   },
   {
    "date": "10/10",
@@ -227,7 +233,8 @@
    "as": 5,
    "home": "KIA",
    "hs": 8,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "10/10",
@@ -235,7 +242,8 @@
    "as": 4,
    "home": "롯데",
    "hs": 3,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "10/09",
@@ -243,7 +251,8 @@
    "as": 7,
    "home": "NC",
    "hs": 2,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "10/09",
@@ -251,7 +260,8 @@
    "as": 1,
    "home": "SSG",
    "hs": 3,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "10/09",
@@ -259,7 +269,8 @@
    "as": 1,
    "home": "롯데",
    "hs": 9,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "10/07",
@@ -267,7 +278,8 @@
    "as": 3,
    "home": "키움",
    "hs": 5,
-   "place": "고척"
+   "place": "고척",
+   "post": false
   },
   {
    "date": "10/07",
@@ -275,7 +287,8 @@
    "as": 3,
    "home": "KT",
    "hs": 9,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "10/07",
@@ -283,7 +296,8 @@
    "as": 3,
    "home": "SSG",
    "hs": 6,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "10/07",
@@ -291,7 +305,8 @@
    "as": 12,
    "home": "롯데",
    "hs": 4,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "10/07",
@@ -299,7 +314,8 @@
    "as": 5,
    "home": "LG",
    "hs": 7,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/06",
@@ -307,7 +323,8 @@
    "as": 10,
    "home": "키움",
    "hs": 1,
-   "place": "고척"
+   "place": "고척",
+   "post": false
   },
   {
    "date": "10/06",
@@ -315,7 +332,8 @@
    "as": 2,
    "home": "한화",
    "hs": 9,
-   "place": "대전"
+   "place": "대전",
+   "post": false
   },
   {
    "date": "10/06",
@@ -323,7 +341,8 @@
    "as": 5,
    "home": "KIA",
    "hs": 4,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "10/06",
@@ -331,7 +350,8 @@
    "as": 3,
    "home": "롯데",
    "hs": 1,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "10/06",
@@ -339,7 +359,8 @@
    "as": 1,
    "home": "LG",
    "hs": 6,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/05",
@@ -347,7 +368,8 @@
    "as": 6,
    "home": "한화",
    "hs": 13,
-   "place": "대전"
+   "place": "대전",
+   "post": false
   },
   {
    "date": "10/05",
@@ -355,7 +377,8 @@
    "as": 9,
    "home": "NC",
    "hs": 0,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "10/05",
@@ -363,7 +386,8 @@
    "as": 0,
    "home": "KT",
    "hs": 9,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "10/05",
@@ -371,7 +395,8 @@
    "as": 7,
    "home": "삼성",
    "hs": 5,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/05",
@@ -379,7 +404,8 @@
    "as": 6,
    "home": "LG",
    "hs": 4,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/04",
@@ -387,7 +413,8 @@
    "as": 2,
    "home": "KT",
    "hs": 2,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "10/04",
@@ -395,7 +422,8 @@
    "as": 9,
    "home": "한화",
    "hs": 3,
-   "place": "대전"
+   "place": "대전",
+   "post": false
   },
   {
    "date": "10/04",
@@ -403,7 +431,8 @@
    "as": 6,
    "home": "NC",
    "hs": 2,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "10/04",
@@ -411,7 +440,8 @@
    "as": 12,
    "home": "삼성",
    "hs": 0,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/04",
@@ -419,7 +449,8 @@
    "as": 6,
    "home": "LG",
    "hs": 5,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/03",
@@ -427,7 +458,8 @@
    "as": 7,
    "home": "한화",
    "hs": 2,
-   "place": "대전"
+   "place": "대전",
+   "post": false
   },
   {
    "date": "10/03",
@@ -435,7 +467,8 @@
    "as": 1,
    "home": "NC",
    "hs": 13,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "10/03",
@@ -443,7 +476,8 @@
    "as": 0,
    "home": "KT",
    "hs": 5,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "10/03",
@@ -451,7 +485,8 @@
    "as": 4,
    "home": "삼성",
    "hs": 6,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/03",
@@ -459,7 +494,8 @@
    "as": 5,
    "home": "LG",
    "hs": 4,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "10/01",
@@ -467,7 +503,8 @@
    "as": 7,
    "home": "KIA",
    "hs": 5,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "10/01",
@@ -475,7 +512,8 @@
    "as": 5,
    "home": "SSG",
    "hs": 6,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "10/01",
@@ -483,7 +521,8 @@
    "as": 2,
    "home": "삼성",
    "hs": 3,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "10/01",
@@ -491,7 +530,8 @@
    "as": 7,
    "home": "두산",
    "hs": 9,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "09/30",
@@ -499,7 +539,8 @@
    "as": 3,
    "home": "KIA",
    "hs": 2,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "09/30",
@@ -507,7 +548,8 @@
    "as": 3,
    "home": "SSG",
    "hs": 4,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "09/30",
@@ -515,7 +557,8 @@
    "as": 6,
    "home": "롯데",
    "hs": 8,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "09/30",
@@ -523,7 +566,8 @@
    "as": 2,
    "home": "삼성",
    "hs": 6,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "09/30",
@@ -531,7 +575,8 @@
    "as": 5,
    "home": "두산",
    "hs": 6,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "09/29",
@@ -539,7 +584,8 @@
    "as": 8,
    "home": "KIA",
    "hs": 5,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "09/29",
@@ -547,7 +593,8 @@
    "as": 1,
    "home": "SSG",
    "hs": 7,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "09/29",
@@ -555,7 +602,8 @@
    "as": 2,
    "home": "롯데",
    "hs": 4,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "09/29",
@@ -563,7 +611,8 @@
    "as": 5,
    "home": "삼성",
    "hs": 10,
-   "place": "대구"
+   "place": "대구",
+   "post": false
   },
   {
    "date": "09/29",
@@ -571,7 +620,8 @@
    "as": 2,
    "home": "두산",
    "hs": 5,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "09/27",
@@ -579,7 +629,8 @@
    "as": 8,
    "home": "NC",
    "hs": 4,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "09/27",
@@ -587,7 +638,8 @@
    "as": 6,
    "home": "롯데",
    "hs": 2,
-   "place": "사직"
+   "place": "사직",
+   "post": false
   },
   {
    "date": "09/27",
@@ -595,7 +647,8 @@
    "as": 12,
    "home": "두산",
    "hs": 6,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   },
   {
    "date": "09/26",
@@ -603,7 +656,8 @@
    "as": 2,
    "home": "NC",
    "hs": 3,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "09/26",
@@ -611,7 +665,8 @@
    "as": 10,
    "home": "KT",
    "hs": 1,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "09/26",
@@ -619,7 +674,8 @@
    "as": 1,
    "home": "KIA",
    "hs": 5,
-   "place": "광주"
+   "place": "광주",
+   "post": false
   },
   {
    "date": "09/25",
@@ -627,7 +683,8 @@
    "as": 7,
    "home": "NC",
    "hs": 8,
-   "place": "창원"
+   "place": "창원",
+   "post": false
   },
   {
    "date": "09/24",
@@ -635,7 +692,8 @@
    "as": 2,
    "home": "KT",
    "hs": 3,
-   "place": "수원"
+   "place": "수원",
+   "post": false
   },
   {
    "date": "09/24",
@@ -643,7 +701,8 @@
    "as": 5,
    "home": "SSG",
    "hs": 4,
-   "place": "문학"
+   "place": "문학",
+   "post": false
   },
   {
    "date": "09/24",
@@ -651,7 +710,8 @@
    "as": 6,
    "home": "LG",
    "hs": 4,
-   "place": "잠실"
+   "place": "잠실",
+   "post": false
   }
  ],
  "standings": [
@@ -1375,5 +1435,5 @@
    ]
   }
  },
- "updated": "2026-10-14 08:51 KST"
+ "updated": "2026-10-13 15:37 KST"
 }

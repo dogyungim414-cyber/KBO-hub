@@ -113,7 +113,7 @@ def schedule():
     today = (NOW.month, NOW.day)
     todo = [g for g in games if g["as"] is None and "취소" not in g["note"] and (g["month"], g["d"]) >= today]
     results = [{"date": f'{g["month"]:02d}/{g["d"]:02d}', "away": g["away"], "as": g["as"],
-                "home": g["home"], "hs": g["hs"], "place": g["place"]}
+                "home": g["home"], "hs": g["hs"], "place": g["place"], "post": g["post"]}
                for g in reversed(done)][:60]
     sched = [{"date": g["day"].replace(".", "/", 1), "time": g["time"],
               "stage": "포스트시즌" if g["post"] else "정규시즌",

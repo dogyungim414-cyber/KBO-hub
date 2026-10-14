@@ -1,6 +1,6 @@
 /* KBO HUB 공통 스크립트: 데이터 로드, 헤더/푸터, 화면 조각 함수 */
 const TC={"KT":["#1a1a1a","#EB1C24"],"삼성":["#074CA1","#9FB5D6"],"KIA":["#EA0029","#1a1a1a"],"LG":["#C30452","#1a1a1a"],"두산":["#131230","#E60012"],"SSG":["#CE0E2D","#F2B705"],"롯데":["#041E42","#D00F31"],"NC":["#315288","#AF917B"],"한화":["#E8590C","#1a1a1a"],"키움":["#570514","#C69B5B"]};
-const NAV=[["index.html","홈"],["schedule.html","일정"],["results.html","결과"],["standings.html","팀 순위"],["teams.html","팀"],["leaders.html","선수 순위"],["players.html","선수"]];
+const NAV=[["index.html","홈"],["schedule.html","일정"],["results.html","결과"],["standings.html","팀 순위"],["postseason.html","포스트시즌"],["teams.html","팀"],["leaders.html","선수 순위"],["players.html","선수"]];
 const $=id=>document.getElementById(id);
 function themeNow(){return document.documentElement.dataset.theme==="dark"?"dark":"light"}
 function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("kbo-theme",t)}catch(e){}const b=$("themeBtn");if(b)b.textContent=t==="dark"?"☀️ 라이트":"🌙 다크"}
