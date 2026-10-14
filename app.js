@@ -3,12 +3,13 @@ const TC={"KT":["#1a1a1a","#EB1C24"],"삼성":["#074CA1","#9FB5D6"],"KIA":["#EA0
 const NAV=[["index.html","홈"],["schedule.html","일정"],["results.html","결과"],["standings.html","팀 순위"],["postseason.html","포스트시즌"],["teams.html","팀"],["leaders.html","선수 순위"],["players.html","선수"]];
 const $=id=>document.getElementById(id);
 function themeNow(){return document.documentElement.dataset.theme==="dark"?"dark":"light"}
-function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("kbo-theme",t)}catch(e){}const b=$("themeBtn");if(b)b.textContent=t==="dark"?"☀️ 라이트":"🌙 다크"}
+function setTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("kbo-theme",t)}catch(e){}const b=$("themeBtn");if(b)b.textContent=t==="dark"?"☀️":"🌙";b.title=t==="dark"?"라이트 모드로 전환":"다크 모드로 전환";b.setAttribute("aria-label",b.title)}
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const q=k=>new URLSearchParams(location.search).get(k);
 let D,TEAMS;
 function sty(t){const c=TC[t];return c?`style="--c1:${c[0]};--c2:${c[1]}"`:""}
-function bd(t){return `<span class="bd" ${sty(t)}>${t==="키움"?"키":t.length>2?t[0]:t}</span>`}
+const LOGO={"롯데":"lotte","LG":"lg","한화":"hanwha","키움":"kiwoom","NC":"nc","SSG":"ssg","KIA":"kia","삼성":"samsung","두산":"doosan","KT":"kt"};
+function bd(t){const tx=t==="키움"?"키":t.length>2?t[0]:t;return LOGO[t]?`<span class="bd bdl" data-tx="${tx}" ${sty(t)}><img src="t-${LOGO[t]}.jpg" alt="${t}" loading="lazy" onerror="this.remove()"></span>`:`<span class="bd" ${sty(t)}>${tx}</span>`}
 function tl(t){return TEAMS.includes(t)?`<a class="clk" href="team.html?t=${encodeURIComponent(t)}">${bd(t)}${t}</a>`:esc(t)}
 function pl(n,t){return `<a class="clk" href="player.html?n=${encodeURIComponent(n)}&t=${encodeURIComponent(t)}">${esc(n)}</a>`}
 function gameRow(g){return `<div class="game"><div class="t ${g.as>g.hs?'win':''}">${tl(g.away)}</div><div class="m"><span class="score">${g.as} : ${g.hs}</span><br>${g.date} · ${g.place}</div><div class="t r ${g.hs>g.as?'win':''}">${tl(g.home)}</div></div>`}
