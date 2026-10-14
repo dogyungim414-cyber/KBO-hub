@@ -1,15 +1,6 @@
 {
  "schedule": [
   {
-   "date": "10/14(수)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "두산",
-   "home": "LG",
-   "place": "잠실",
-   "note": "WC 1차전"
-  },
-  {
    "date": "10/15(목)",
    "time": "18:30",
    "stage": "포스트시즌",
@@ -173,6 +164,15 @@
   }
  ],
  "results": [
+  {
+   "date": "10/14",
+   "away": "두산",
+   "as": 0,
+   "home": "LG",
+   "hs": 0,
+   "place": "잠실",
+   "post": true
+  },
   {
    "date": "10/12",
    "away": "LG",
@@ -702,15 +702,6 @@
    "home": "SSG",
    "hs": 4,
    "place": "문학",
-   "post": false
-  },
-  {
-   "date": "09/24",
-   "away": "롯데",
-   "as": 6,
-   "home": "LG",
-   "hs": 4,
-   "place": "잠실",
    "post": false
   }
  ],
@@ -1435,5 +1426,5 @@
    ]
   }
  },
- "updated": "2026-10-14 17:03 KST"
+ "updated": "2026-10-14 18:03 KST"
 }
