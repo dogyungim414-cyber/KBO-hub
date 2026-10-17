@@ -1,15 +1,6 @@
 {
  "schedule": [
   {
-   "date": "10/17(토)",
-   "time": "14:00",
-   "stage": "포스트시즌",
-   "away": "LG",
-   "home": "KIA",
-   "place": "광주",
-   "note": "준PO 1차전"
-  },
-  {
    "date": "10/18(일)",
    "time": "14:00",
    "stage": "포스트시즌",
@@ -155,6 +146,15 @@
   }
  ],
  "results": [
+  {
+   "date": "10/17",
+   "away": "LG",
+   "as": 0,
+   "home": "KIA",
+   "hs": 0,
+   "place": "광주",
+   "post": true
+  },
   {
    "date": "10/14",
    "away": "두산",
@@ -684,15 +684,6 @@
    "home": "KT",
    "hs": 3,
    "place": "수원",
-   "post": false
-  },
-  {
-   "date": "09/24",
-   "away": "삼성",
-   "as": 5,
-   "home": "SSG",
-   "hs": 4,
-   "place": "문학",
    "post": false
   }
  ],
@@ -1417,5 +1408,5 @@
    ]
   }
  },
- "updated": "2026-10-17 12:58 KST"
+ "updated": "2026-10-17 13:27 KST"
 }
