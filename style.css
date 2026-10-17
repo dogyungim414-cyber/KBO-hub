@@ -113,3 +113,10 @@ html[data-theme=dark] .btn{color:#fff}
 .champ{text-align:center;background:linear-gradient(135deg,#f2b705,#ffdf6b);color:#3b2d00;border-radius:12px;padding:18px;margin-bottom:16px;font-weight:800;font-size:20px}
 .rule{font-size:14px;color:var(--mute);line-height:1.8}
 .arrow{display:none}
+
+.tg .bd.bdl{display:flex!important;width:64px!important;height:64px!important;margin:0 auto 8px!important;border-radius:12px!important}
+.th .bd.bdl{width:84px!important;height:84px!important;margin:0!important;border:0!important;border-radius:14px!important;padding:4px!important}
+.th .bd.bdl img{border-radius:10px}
+.round .side .bd.bdl{width:30px;height:30px}
+.theme{width:38px;height:38px;padding:0;font-size:18px;line-height:1;margin-left:6px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:600px){.theme{width:34px;height:34px}}

@@ -9,7 +9,10 @@ const q=k=>new URLSearchParams(location.search).get(k);
 let D,TEAMS;
 function sty(t){const c=TC[t];return c?`style="--c1:${c[0]};--c2:${c[1]}"`:""}
 const LOGO={"롯데":"lotte","LG":"lg","한화":"hanwha","키움":"kiwoom","NC":"nc","SSG":"ssg","KIA":"kia","삼성":"samsung","두산":"doosan","KT":"kt"};
-function bd(t){const tx=t==="키움"?"키":t.length>2?t[0]:t;return LOGO[t]?`<span class="bd bdl" data-tx="${tx}" ${sty(t)}><img src="t-${LOGO[t]}.jpg" alt="${t}" loading="lazy" onerror="this.remove()"></span>`:`<span class="bd" ${sty(t)}>${tx}</span>`}
+function bd(t){const tx=t==="키움"?"키":t.length>2?t[0]:t;
+ if(!LOGO[t])return `<span class="bd" ${sty(t)}>${tx}</span>`;
+ const S="display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:6px;width:28px;height:28px;min-width:28px;background:#fff;border-radius:7px;overflow:hidden;border:1px solid rgba(128,128,128,.35);padding:1px;box-sizing:border-box";
+ return `<span class="bd bdl" ${sty(t)} style="${S}"><img src="t-${LOGO[t]}.jpg" alt="${t}" loading="lazy" style="width:100%;height:100%;max-width:100%;object-fit:contain;display:block" onerror="this.parentNode.textContent='${tx}'"></span>`}
 function tl(t){return TEAMS.includes(t)?`<a class="clk" href="team.html?t=${encodeURIComponent(t)}">${bd(t)}${t}</a>`:esc(t)}
 function pl(n,t){return `<a class="clk" href="player.html?n=${encodeURIComponent(n)}&t=${encodeURIComponent(t)}">${esc(n)}</a>`}
 function gameRow(g){return `<div class="game"><div class="t ${g.as>g.hs?'win':''}">${tl(g.away)}</div><div class="m"><span class="score">${g.as} : ${g.hs}</span><br>${g.date} · ${g.place}</div><div class="t r ${g.hs>g.as?'win':''}">${tl(g.home)}</div></div>`}
