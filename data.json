@@ -1,15 +1,6 @@
 {
  "schedule": [
   {
-   "date": "10/20(화)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "KIA",
-   "home": "LG",
-   "place": "잠실",
-   "note": "준PO 3차전"
-  },
-  {
    "date": "10/21(수)",
    "time": "18:30",
    "stage": "포스트시즌",
@@ -137,6 +128,15 @@
   }
  ],
  "results": [
+  {
+   "date": "10/20",
+   "away": "KIA",
+   "as": 0,
+   "home": "LG",
+   "hs": 0,
+   "place": "잠실",
+   "post": true
+  },
   {
    "date": "10/18",
    "away": "LG",
@@ -666,15 +666,6 @@
    "home": "KIA",
    "hs": 5,
    "place": "광주",
-   "post": false
-  },
-  {
-   "date": "09/25",
-   "away": "한화",
-   "as": 7,
-   "home": "NC",
-   "hs": 8,
-   "place": "창원",
    "post": false
   }
  ],
@@ -1399,5 +1390,5 @@
    ]
   }
  },
- "updated": "2026-10-20 17:26 KST"
+ "updated": "2026-10-20 18:06 KST"
 }
