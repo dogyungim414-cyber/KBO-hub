@@ -1,67 +1,49 @@
 {
  "schedule": [
   {
-   "date": "10/21(수)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "KIA",
-   "home": "LG",
-   "place": "잠실",
-   "note": "준PO 4차전"
-  },
-  {
-   "date": "10/23(금)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "LG",
-   "home": "KIA",
-   "place": "광주",
-   "note": "준PO 5차전"
-  },
-  {
    "date": "10/25(일)",
    "time": "14:00",
    "stage": "포스트시즌",
-   "away": "준PO 승리팀",
+   "away": "KIA",
    "home": "삼성",
    "place": "대구",
-   "note": ""
+   "note": "PO 1차전"
   },
   {
    "date": "10/26(월)",
    "time": "18:30",
    "stage": "포스트시즌",
-   "away": "준PO 승리팀",
+   "away": "KIA",
    "home": "삼성",
    "place": "대구",
-   "note": ""
+   "note": "PO 2차전"
   },
   {
    "date": "10/28(수)",
    "time": "18:30",
    "stage": "포스트시즌",
    "away": "삼성",
-   "home": "준PO 승리팀",
-   "place": "미정",
-   "note": ""
+   "home": "KIA",
+   "place": "광주",
+   "note": "PO 3차전"
   },
   {
    "date": "10/29(목)",
    "time": "18:30",
    "stage": "포스트시즌",
    "away": "삼성",
-   "home": "준PO 승리팀",
-   "place": "미정",
-   "note": ""
+   "home": "KIA",
+   "place": "광주",
+   "note": "PO 4차전"
   },
   {
    "date": "10/31(토)",
    "time": "14:00",
    "stage": "포스트시즌",
-   "away": "준PO 승리팀",
+   "away": "KIA",
    "home": "삼성",
    "place": "대구",
-   "note": ""
+   "note": "PO 5차전"
   },
   {
    "date": "11/02(월)",
@@ -131,9 +113,9 @@
   {
    "date": "10/20",
    "away": "KIA",
-   "as": 0,
+   "as": 13,
    "home": "LG",
-   "hs": 0,
+   "hs": 1,
    "place": "잠실",
    "post": true
   },
@@ -1390,5 +1372,5 @@
    ]
   }
  },
- "updated": "2026-10-20 21:27 KST"
+ "updated": "2026-10-20 22:16 KST"
 }
