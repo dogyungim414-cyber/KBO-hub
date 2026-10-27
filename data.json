@@ -1,15 +1,6 @@
 {
  "schedule": [
   {
-   "date": "10/27(화)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "KIA",
-   "home": "삼성",
-   "place": "대구",
-   "note": "PO 2차전"
-  },
-  {
    "date": "10/29(목)",
    "time": "18:30",
    "stage": "포스트시즌",
@@ -101,6 +92,15 @@
   }
  ],
  "results": [
+  {
+   "date": "10/27",
+   "away": "KIA",
+   "as": 0,
+   "home": "삼성",
+   "hs": 0,
+   "place": "대구",
+   "post": true
+  },
   {
    "date": "10/26",
    "away": "KIA",
@@ -630,15 +630,6 @@
    "home": "NC",
    "hs": 3,
    "place": "창원",
-   "post": false
-  },
-  {
-   "date": "09/26",
-   "away": "키움",
-   "as": 10,
-   "home": "KT",
-   "hs": 1,
-   "place": "수원",
    "post": false
   }
  ],
@@ -1363,5 +1354,5 @@
    ]
   }
  },
- "updated": "2026-10-27 16:20 KST"
+ "updated": "2026-10-27 17:11 KST"
 }
