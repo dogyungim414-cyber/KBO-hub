@@ -1,15 +1,6 @@
 {
  "schedule": [
   {
-   "date": "10/29(목)",
-   "time": "18:30",
-   "stage": "포스트시즌",
-   "away": "삼성",
-   "home": "KIA",
-   "place": "광주",
-   "note": "PO 3차전"
-  },
-  {
    "date": "10/30(금)",
    "time": "18:30",
    "stage": "포스트시즌",
@@ -92,6 +83,15 @@
   }
  ],
  "results": [
+  {
+   "date": "10/29",
+   "away": "삼성",
+   "as": 0,
+   "home": "KIA",
+   "hs": 0,
+   "place": "광주",
+   "post": true
+  },
   {
    "date": "10/27",
    "away": "KIA",
@@ -621,15 +621,6 @@
    "home": "두산",
    "hs": 6,
    "place": "잠실",
-   "post": false
-  },
-  {
-   "date": "09/26",
-   "away": "한화",
-   "as": 2,
-   "home": "NC",
-   "hs": 3,
-   "place": "창원",
    "post": false
   }
  ],
@@ -1354,5 +1345,5 @@
    ]
   }
  },
- "updated": "2026-10-29 15:10 KST"
+ "updated": "2026-10-29 16:34 KST"
 }
