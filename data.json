@@ -505,114 +505,6 @@
    "hs": 9,
    "place": "잠실",
    "post": false
-  },
-  {
-   "date": "09/30",
-   "away": "KT",
-   "as": 3,
-   "home": "KIA",
-   "hs": 2,
-   "place": "광주",
-   "post": false
-  },
-  {
-   "date": "09/30",
-   "away": "LG",
-   "as": 3,
-   "home": "SSG",
-   "hs": 4,
-   "place": "문학",
-   "post": false
-  },
-  {
-   "date": "09/30",
-   "away": "키움",
-   "as": 6,
-   "home": "롯데",
-   "hs": 8,
-   "place": "사직",
-   "post": false
-  },
-  {
-   "date": "09/30",
-   "away": "한화",
-   "as": 2,
-   "home": "삼성",
-   "hs": 6,
-   "place": "대구",
-   "post": false
-  },
-  {
-   "date": "09/30",
-   "away": "NC",
-   "as": 5,
-   "home": "두산",
-   "hs": 6,
-   "place": "잠실",
-   "post": false
-  },
-  {
-   "date": "09/29",
-   "away": "KT",
-   "as": 8,
-   "home": "KIA",
-   "hs": 5,
-   "place": "광주",
-   "post": false
-  },
-  {
-   "date": "09/29",
-   "away": "LG",
-   "as": 1,
-   "home": "SSG",
-   "hs": 7,
-   "place": "문학",
-   "post": false
-  },
-  {
-   "date": "09/29",
-   "away": "키움",
-   "as": 2,
-   "home": "롯데",
-   "hs": 4,
-   "place": "사직",
-   "post": false
-  },
-  {
-   "date": "09/29",
-   "away": "한화",
-   "as": 5,
-   "home": "삼성",
-   "hs": 10,
-   "place": "대구",
-   "post": false
-  },
-  {
-   "date": "09/29",
-   "away": "NC",
-   "as": 2,
-   "home": "두산",
-   "hs": 5,
-   "place": "잠실",
-   "post": false
-  },
-  {
-   "date": "09/27",
-   "away": "키움",
-   "as": 8,
-   "home": "NC",
-   "hs": 4,
-   "place": "창원",
-   "post": false
-  },
-  {
-   "date": "09/27",
-   "away": "한화",
-   "as": 6,
-   "home": "롯데",
-   "hs": 2,
-   "place": "사직",
-   "post": false
   }
  ],
  "standings": [
@@ -1336,5 +1228,5 @@
    ]
   }
  },
- "updated": "2026-10-31 23:05 KST"
+ "updated": "2026-11-01 00:02 KST"
 }
