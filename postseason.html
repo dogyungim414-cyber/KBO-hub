@@ -16,7 +16,7 @@
 <script>
 init("postseason.html",()=>{
 
-const seed=D.standings.slice(0,5).map(r=>r[0]);
+const seed=D.standings.slice().sort((a,b)=>(parseFloat(b[5])-parseFloat(a[5]))||(b[2]-a[2])||(a[3]-b[3])).slice(0,5).map(r=>r[0]);
 const isT=t=>TEAMS.includes(t);
 const norm=d=>String(d).slice(0,5);
 function stageOf(g){const t=[g.away,g.home];if(t.includes(seed[0]))return 3;if(t.includes(seed[1]))return 2;if(t.includes(seed[2]))return 1;return 0}
@@ -50,7 +50,7 @@ function gline(g){return g.fin?`<div class="gl"><b>${esc(g.date)}</b> · ${esc(g
  :`<div class="gl">${esc(g.date)} ${esc(g.time||'')} · ${esc(g.away)} vs ${esc(g.home)} · ${esc(g.place)}${g.note?' · '+esc(g.note):''}</div>`}
 function card(r){const s=ST[r.i];
  let pill;
- if(r.winner)pill=`<span class="pill end">종료 · ${esc(r.winner)} 진출</span>`;
+ if(r.winner)pill=`<span class="pill end">종료 · ${esc(r.winner)} ${r.i===3?"우승":"진출"}</span>`;
  else if(r.fin)pill=`<span class="pill live">진행 중</span>`;
  else pill=`<span class="pill">${r.games.length?'예정':'일정 미정'}</span>`;
  return `<div class="round"><h3>${s.k}</h3><div class="len">${s.len}</div>

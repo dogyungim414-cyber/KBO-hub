@@ -37,6 +37,8 @@ def standings():
         rows.append([c[1], int(c[2]), int(c[3]), int(c[4]), int(c[5]), c[6],
                      "-" if g in ("0", "0.0") else g, c[8], c[9], c[10], c[11]])
     if len(rows) != 10: raise ValueError(f"순위 행 {len(rows)}개")
+    # KBO 표는 포스트시즌이 끝나면 "최종 순위"(우승팀 1위)로 바뀌므로, 정규시즌 순위는 승률로 직접 정렬
+    rows.sort(key=lambda r: (-float(r[5]), -r[2], r[3]))
     teams = [r[0] for r in rows]
     h2h = {}
     for tr in tables[1].select("tbody tr"):
